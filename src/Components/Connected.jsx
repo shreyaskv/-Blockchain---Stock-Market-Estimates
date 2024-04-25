@@ -37,7 +37,7 @@ const Connected = (props) => {
           ></input>
           <input
             type="number"
-            placeholder="Enter Your Predicted Revenue"
+            placeholder="Enter Your Predicted Revenue (in thousands)"
             value={props.revenue}
             onChange={props.handleRevenueChange}
           ></input>
@@ -54,9 +54,9 @@ const Connected = (props) => {
             <tr>
               <th>User</th>
               <th>Company</th>
-              <th>ReportingPeriod</th>
-              <th>CompanyEarnings</th>
-              <th>CompanyRevenue</th>
+              <th>Reporting Period</th>
+              <th>Company EPS</th>
+              <th>Company Revenue</th>
             </tr>
           </thead>
           <tbody>

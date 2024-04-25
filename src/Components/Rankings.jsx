@@ -16,7 +16,7 @@ const Rankings = ({ candidates }) => { // Corrected destructuring here
 
   const calculateMetrics = (actual, estimate) => {
     const error = Math.abs(actual - estimate);
-    const reward = Math.max(0, 100 - (error / actual) * 100); // Reward decreases as error increases
+    const reward = Math.max(0, 100 - (error / actual) * 100)/100; // Reward decreases as error increases
     return { error, reward };
   };
 
@@ -37,13 +37,6 @@ const Rankings = ({ candidates }) => { // Corrected destructuring here
       };
     });
 
-    // Sorting candidates by earnings and revenue difference
-    // rankings.sort((a, b) => {
-    //   const aTotalDiff = a.earningsDiff + a.revenueDiff;
-    //   const bTotalDiff = b.earningsDiff + b.revenueDiff;
-    //   return aTotalDiff - bTotalDiff;
-    // });
-
     return rankings;
   };
 
@@ -51,42 +44,40 @@ const Rankings = ({ candidates }) => { // Corrected destructuring here
   const rankings = getRankings();
 
   return (
-    <div className="candidates-table">
-      <h2>Rankings</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Index</th>
-            <th>User</th>
-            <th>Company</th>
-            <th>Reporting Period</th>
-            <th>EPS Estimate</th>
-            <th>Revenue Estimate</th>
-            <th>EPS Difference</th>
-            <th>Revenue Difference</th>
-            <th>EPS Reward</th>
-            <th>Revenue Reward</th>
-            <th>Total Reward</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rankings.map((candidate, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{candidate.user}</td>
-              <td>{candidate.companyID}</td>
-              <td>{candidate.reportingPeriod}</td>
-              <td>{candidate.earningsEstimate}</td>
-              <td>{candidate.revenueEstimate}</td>
-              <td>{candidate.earningsError}</td>
-              <td>{candidate.revenueError}</td>
-              <td>{candidate.earningsReward}</td>
-              <td>{candidate.revenueReward}</td>
-              <td>{candidate.totalReward}</td>
+    <div className="reward-table-scroll">
+      <div className="reward-table-container">
+      <h2>Rewards</h2>
+        <table className="reward-table">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>User</th>
+              <th>Company</th>
+              <th>Reporting Period</th>
+              <th>EPS Estimate</th>
+              <th>Revenue Estimate</th>
+              <th>EPS Reward</th>
+              <th>Revenue Reward</th>
+              <th>Total Reward</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rankings.map((candidate, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{candidate.user}</td>
+                <td>{candidate.companyID}</td>
+                <td>{candidate.reportingPeriod}</td>
+                <td>{candidate.earningsEstimate}</td>
+                <td>{candidate.revenueEstimate}</td>
+                <td>{Number(candidate.earningsReward).toFixed(2)}</td>
+                <td>{Number(candidate.revenueReward).toFixed(2)}</td>
+                <td>{Number(candidate.totalReward).toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
