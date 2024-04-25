@@ -18,61 +18,63 @@ const Connected = (props) => {
             onChange={props.handleCompanyidChange}
             className="company-select"
           >
-            <option value="">Select a company</option>
+            <option value="">Select A Company</option>
             <option value="Tesla">Tesla</option>
             <option value="Google">Google</option>
             <option value="Microsoft">Microsoft</option>
           </select>
           <input
             type="text"
-            placeholder="Enter Period"
+            placeholder="Enter Period (Quarter)"
             value={props.period}
             onChange={props.handlePeriodChange}
           ></input>
           <input
             type="number"
-            placeholder="Enter company predicted earnings"
+            placeholder="Enter Your Predicted Earnings Per Share"
             value={props.earnings}
             onChange={props.handleEarningsChange}
           ></input>
           <input
             type="number"
-            placeholder="Enter company predicted revenue"
+            placeholder="Enter Your Predicted Revenue"
             value={props.revenue}
             onChange={props.handleRevenueChange}
           ></input>
           <br />
-          <button className="login-button" onClick={props.estimateFunction}>
+          <button className="estimate-button" onClick={props.estimateFunction}>
             Estimate
-          </button>
-          <button className="get-rankings-button" onClick={props.handleGetRankings}>
-            Get Rankings
           </button>
         </div>
       )}
 
-      <table id="myTable" className="candidates-table">
-        <thead>
-          <tr>
-            <th>User</th>
-            <th>CompanyID</th>
-            <th>ReportingPeriod</th>
-            <th>CompanyEarnings</th>
-            <th>CompanyRevenue</th>
-          </tr>
-        </thead>
-        <tbody>
-          {props.candidates.map((candidate, index) => (
-            <tr key={index}>
-              <td>{candidate.user}</td>
-              <td>{candidate.companyID}</td>
-              <td>{candidate.reportingPeriod}</td>
-              <td>{candidate.earningsEstimate}</td>
-              <td>{candidate.revenueEstimate}</td>
+      <div className="table-container">
+        <table id="myTable" className="candidates-table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Company</th>
+              <th>ReportingPeriod</th>
+              <th>CompanyEarnings</th>
+              <th>CompanyRevenue</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {props.candidates.map((candidate, index) => (
+              <tr key={index}>
+                <td>{candidate.user}</td>
+                <td>{candidate.companyID}</td>
+                <td>{candidate.reportingPeriod}</td>
+                <td>{candidate.earningsEstimate}</td>
+                <td>{candidate.revenueEstimate}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <button className="get-rankings-button" onClick={props.handleGetRankings}>
+            Check Rewards
+      </button>
     </div>
   );
 };

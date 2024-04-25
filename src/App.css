@@ -1,115 +1,208 @@
+/* General Font and Body Styling */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+body {
+    background-color: #e9ecef; /* Soft gray background for the entire page */
+    margin: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+}
+
+/* Login Page Styles */
 .login-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f1f1f1;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 40px;
+    width: 400px;
 }
 
 .welcome-message {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
+    color: #333333;
+    margin-bottom: 24px;
 }
 
 .login-button {
-  background-color: #007bff;
-  color: #fff;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 0.3rem;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .login-button:hover {
-  background-color: #0069d9;
+    background-color: #0056b3;
 }
 
-
+/* Connected Page Styles */
 .connected-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f1f1f1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    width: 100%;
+    max-width: 920px;
 }
 
-.connected-header {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
+.connected-header{
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-.connected-account {
-  font-size: 1.2rem;
-  text-align: center;
-  margin-bottom: 2rem;
+.connected-account{
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 20px;
 }
 
-.connected-button {
-  background-color: #007bff;
-  color: #fff;
-  font-size: 1.2rem;
+select, input[type="text"], input[type="number"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-button {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Style for the Estimate button */
+.estimate-button {
+  background-color: #28a745; /* A green color for the estimate button */
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
   border: none;
-  border-radius: 0.3rem;
-  padding: 1rem 2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 2rem;
+  transition: background-color 0.3s;
+  display: block; /* Allows the button to be centered with margin auto */
+  margin: 20px auto; /* Centers the button horizontally */
+  width: fit-content; /* Ensures the button width fits its content */
 }
 
-.connected-button:hover {
-  background-color: #0069d9;
+.estimate-button:hover {
+  background-color: #218838; /* A darker shade of green for hover effect */
 }
 
-.connected-contract-address {
-  font-size: 1.2rem;
-  text-align: center;
+/* Style for the Get Rankings button, similar to the Estimate button */
+.get-rankings-button {
+  background-color: #17a2b8; /* A blue color for the get rankings button */
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block; /* Allows the button to be centered with margin auto */
+  margin: 20px auto; /* Margin to space out the button from the table and center it horizontally */
+  width: fit-content; /* Ensures the button width fits its content */
 }
 
+.get-rankings-button:hover {
+  background-color: #138496; /* A darker shade of blue for hover effect */
+}
 
+.login-button:hover {
+    opacity: 0.9;
+}
+
+.table-container {
+  overflow-x: auto; /* Enables horizontal scrolling */
+  margin-top: 20px;
+}
+
+/* Table Styles */
 .candidates-table {
+  width: 100%;
   border-collapse: collapse;
-  width: 50%;
-  text-align:center;
+  margin-top: 20px; /* Add space above the table */
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  max-width: 900px;
 }
 
 .candidates-table th, .candidates-table td {
-  padding: 8px;
+  padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border: 1px solid #dee2e6; /* Add border for gridlines */
 }
 
+/* Header styles */
 .candidates-table th {
-  background-color: #f2f2f2;
+  background-color: #007bff; /* Use the theme color for headers */
+  color: #ffffff; /* White text for contrast */
+  font-size: 0.9em;
 }
 
-.rankings-table {
-  border-collapse: collapse;
-  width: 50%;
-  text-align:center;
+/* Body styles */
+.candidates-table tbody tr:nth-child(odd) {
+  background-color: #f8f9fa; /* Light background for odd rows */
+  font-size: 0.9em;
 }
 
-.rankings-table th, .rankings-table td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+.candidates-table tbody tr:nth-child(even) {
+  background-color: #e9ecef; /* Slightly darker background for even rows */
+  font-size: 0.9em;
 }
 
-.rankings-table th {
-  background-color: #f2f2f2;
+/* Hover effect for rows */
+.candidates-table tbody tr:hover {
+  background-color: #dae0e5; /* Highlight on hover */
 }
 
-input[type=number] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+  .candidates-table, .candidates-table thead, .candidates-table tbody, .candidates-table th, .candidates-table td, .candidates-table tr {
+      display: block;
+  }
 
+  .candidates-table thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+  }
+
+  .candidates-table td {
+      /* Each cell must be full-width for the mobile view */
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+  }
+
+  .candidates-table td:before {
+      /* Adding a label to each cell before its content */
+      content: attr(data-title);
+      float: left;
+      font-weight: bold;
+      color: #007bff;
+  }
+
+  .candidates-table tbody tr {
+      margin-bottom: 10px;
+      border: none;
+  }
+
+  .candidates-table tbody tr td:last-child {
+      border-bottom: 2px solid #007bff;
+  }
+}
