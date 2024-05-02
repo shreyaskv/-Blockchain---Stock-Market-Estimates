@@ -1,7 +1,11 @@
 ConsensusIQ distinguishes itself by integrating blockchain technology specifically for crowdsourcing financial estimates on a wide range of companies, not just focused on cryptocurrencies or inflation metrics. This broader scope allows for leveraging the collective intelligence of a diverse group of participants, which is not commonly targeted by existing blockchain forecasting solutions.
+
 Decentralized Participation: Unlike traditional financial forecasting platforms that might rely on a limited number of analysts, ConsensusIQ democratizes the input process, enabling anyone from around the world to submit their financial estimates. This can potentially lead to a richer dataset, reflecting a wider array of economic conditions and perspectives.
+
 Enhanced Transparency and Security: By using blockchain technology, all submissions and their subsequent evaluations are recorded transparently and immutably. This not only ensures security against tampering but also builds trust among users as they can verify the integrity of the process and the fairness of the reward distribution themselves.
+
 Incentive Alignment: ConsensusIQ uses a token-based reward system to incentivize accuracy among participants. This model encourages contributors to provide thoughtful and precise estimates, as their compensation and reputation within the platform depend on their performance.
+
 Smart Contract Efficiency: Implementing smart contracts for tasks like submission validation, result verification, and reward distribution automates these processes and reduces the need for intermediaries. This can lead to lower costs and faster execution compared to traditional systems​ (St. Louis Fed)​.
 
 # Getting Started with Create React App
